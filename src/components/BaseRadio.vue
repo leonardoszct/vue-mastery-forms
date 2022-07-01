@@ -18,8 +18,8 @@ export default {
       default: ''
     },
     modelValue: {
-      type: Boolean,
-      default: false
+      type: [String, Number],
+      default: ''
     },
     value: {
       type: [String, Number],
