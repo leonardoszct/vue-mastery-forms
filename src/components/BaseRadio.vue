@@ -1,16 +1,17 @@
 <template>
   <input
-    type="checkbox"
-    :checked="modelValue"
-    @change="$emit('update:modelValue', $event.target.checked)"
-    class="field"
+    type="radio"
+    :checked="modelValue === value"
+    :value="value"
+    @change="$emit('update:modelValue', value)"
+    v-bind="$attrs"
   />
   <label v-if="label">{{ label }}</label>
 </template>
 
 <script>
 export default {
-  name: 'BaseCheckbox',
+  name: 'BaseRadio',
   props: {
     label: {
       type: String,
@@ -19,6 +20,10 @@ export default {
     modelValue: {
       type: Boolean,
       default: false
+    },
+    value: {
+      type: [String, Number],
+      required: true
     }
   }
 }
