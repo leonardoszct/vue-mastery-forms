@@ -78,9 +78,6 @@
 
 <script>
 
-import BaseInput from '../components/BaseInput.vue'
-import BaseSelect from '../components/BaseSelect.vue'
-
 export default {
   data () {
     return {
@@ -105,7 +102,6 @@ export default {
         }
       }
     }
-  },
-  components: { BaseInput, BaseSelect }
+  }
 }
 </script>
