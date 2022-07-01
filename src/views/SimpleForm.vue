@@ -54,24 +54,20 @@
 
       <h3>Extras</h3>
       <div>
-        <input
-          type="checkbox"
+        <BaseCheckbox
           v-model="event.extras.catering"
-          class="field"
+          label="Catering"
         />
-        <label>Catering</label>
       </div>
 
       <div>
-        <input
-          type="checkbox"
+        <BaseCheckbox
           v-model="event.extras.music"
-          class="field"
+          label="Live music"
         />
-        <label>Live music</label>
       </div>
 
-      <button class="button -fill-gradient" type="submit">Submit</button>
+<button class="button -fill-gradient" type="submit">Submit</button>
     </form>
   </div>
 </template>
