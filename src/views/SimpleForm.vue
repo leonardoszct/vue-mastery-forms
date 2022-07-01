@@ -1,8 +1,7 @@
 <template>
   <div>
     <h1>Create an event</h1>
-    <form>
-
+    <form @submit.prevent="sendForm">
       <BaseSelect
         :options="categories"
         v-model="event.category"
@@ -55,12 +54,18 @@
         />
       </div>
 
-<button class="button -fill-gradient" type="submit">Submit</button>
+      <button
+        class="button -fill-gradient"
+        type="submit"
+      >
+        Submit
+      </button>
     </form>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   data () {
@@ -95,6 +100,18 @@ export default {
           value: 0
         }
       ]
+    }
+  },
+  methods: {
+    sendForm () {
+      axios.post(
+        'http://localhost:3000/events',
+        this.event
+      ).then((response) => {
+        console.log('Response', response)
+      }).catch((error) => {
+        console.log('Error', error)
+      })
     }
   }
 }
